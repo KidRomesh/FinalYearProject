@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -10,15 +11,15 @@ export class NavComponent implements OnInit {
 
   message: number= 3;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private location: Location) { }
 
   ngOnInit(): void {
   }
 
-  go(){
-    this.router.navigate(['/dep']);
-  }
  
+ go(){
+   this.location.back();
+ }
 
 
 }

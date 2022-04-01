@@ -11,7 +11,7 @@
                 <button mat-button (click)="!drawer.toggle()" mat-icon-button style="color:#0ea1eb" class="example-icon">
                     <mat-icon>menu</mat-icon>
                 </button>
-                <span>Yorozuyza</span>
+                <button mat-button (click)="go()">Reise</button>
                 <span class="example-spacer"></span>
                 <button mat-icon-button  style="color:#0ea1eb">
                     <mat-icon>search</mat-icon>
@@ -43,7 +43,7 @@
                         Messages
                     </button>
                     <span style="margin-left:5px;"></span>
-                    <button mat-raised-button (click)="go()" color="primary" style="border-radius: 40px; background-color:#0ea1eb; color: white;">
+                    <button mat-raised-button routerLink="dep" color="primary" style="border-radius: 40px; background-color:#0ea1eb; color: white;">
                         <mat-icon>settings</mat-icon>
                         Departments
                     </button>
