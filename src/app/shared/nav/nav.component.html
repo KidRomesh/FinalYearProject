@@ -1,0 +1,59 @@
+<mat-drawer-container style="height: 100%; width: 100%;" >
+    <mat-drawer  #drawer class="example-sidenav-content  mat-elevation-z3" style="background-color: #0ea1eb;" opened mode="side">
+        <div>
+            <p>hai</p>
+        </div>
+    </mat-drawer>
+    <mat-drawer-content style="height: 100%;">
+        <mat-toolbar style="background-color: white;"  class=" mat-elevation-z3" 
+        [style.margin-bottom]="'2px'">
+            <mat-toolbar-row>
+                <button mat-button (click)="!drawer.toggle()" mat-icon-button style="color:#0ea1eb" class="example-icon">
+                    <mat-icon>menu</mat-icon>
+                </button>
+                <button mat-button (click)="go()">Reise</button>
+                <span class="example-spacer"></span>
+                <button mat-icon-button  style="color:#0ea1eb">
+                    <mat-icon>search</mat-icon>
+                </button>
+                <button mat-icon-button   style="color:#0ea1eb">
+                    <mat-icon>person</mat-icon>
+                </button>
+            </mat-toolbar-row>
+        </mat-toolbar>
+        <mat-toolbar  style ="background-color: white;"class=" top mat-elevation-z2">
+            <mat-toolbar-row>
+                <div style="margin-top: 150px;">
+                    <img src="..//..//../assets/male_av.png" >
+                </div>
+                <span style="margin-right: 10px;"></span>
+                <div style="margin-top: 150px;">
+                    <h1 style="font-size:40px;">Welcome back Romesh!</h1>
+                    <button mat-icon-button  disabled style="margin-top: 10px; color: darkgrey;">
+                        <mat-icon>
+                            notifications
+                        </mat-icon>
+                        You have 2 new tasks and {{message}} message.
+                    </button>
+                </div>
+                <span class="example-spacer"></span>
+                <div style="margin-top: 100px;">
+                    <button mat-raised-button style="border-radius: 40px; background-color:#0ea1eb; color: white;"  >
+                        <mat-icon>sms</mat-icon>
+                        Messages
+                    </button>
+                    <span style="margin-left:5px;"></span>
+                    <button mat-raised-button routerLink="dep" color="primary" style="border-radius: 40px; background-color:#0ea1eb; color: white;">
+                        <mat-icon>settings</mat-icon>
+                        Departments
+                    </button>
+                </div>
+            </mat-toolbar-row>
+        </mat-toolbar>
+        
+            <app-shared>
+            </app-shared>
+
+
+    </mat-drawer-content>
+</mat-drawer-container>

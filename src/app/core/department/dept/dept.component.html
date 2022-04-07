@@ -1,0 +1,29 @@
+<div class="container">
+    <div>
+        <div class="row">
+            <div class="col-6" style=" margin-top:10px;margin-bottom: 20px;" *ngFor="let u of depts|keyValueFilter">
+                <mat-card  >
+                    <mat-card-header>
+                        <mat-card-title-group>
+                            <mat-card-title>
+                                {{u.deptName}}
+                            </mat-card-title>
+                            <mat-card-subtitle>
+                                {{u.deptHead}}
+                            </mat-card-subtitle>
+                        </mat-card-title-group>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <div *ngIf="u.isActive==true else loading">
+                            The Department is active
+                        </div>
+                        <ng-template #loading>
+                            the Department is not active
+                        </ng-template>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+            <div></div>
+        </div>
+    </div>
+</div>

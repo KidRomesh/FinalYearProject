@@ -1,0 +1,81 @@
+.back{
+    height: 100%; 
+    width:100%; 
+    background-image: url('../../../assets/wave.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    
+} 
+
+
+.img{
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+    margin-top: 80px;
+    margin-left: 100px;
+}
+
+.login-content{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	text-align: center;
+    margin-top: 80px;
+    margin-left: 10px;
+}
+
+.img img{
+	width: 500px;
+}
+
+form{
+	width: 360px;
+}
+
+.login-content img{
+    height: 100px;
+}
+
+.login-content h2{
+	margin: 15px 0;
+	color: #333;
+	text-transform: uppercase;
+	font-size: 2.9rem;
+}
+
+.btn{
+	display: block;
+	width: 100%;
+	height: 50px;
+	border-radius: 25px;
+	outline: none;
+	border: none;
+	background-image: linear-gradient(to right, #0ea1eb, #87bbeb, #0ea1eb);
+	background-size: 200%;
+	font-size: 1.2rem;
+	color: #fff;
+	font-family: 'Poppins', sans-serif;
+	text-transform: uppercase;
+	margin: 1rem 0;
+	cursor: pointer;
+	transition: .5s;
+}
+.btn:hover{
+	background-position: right;
+}
+
+a{
+	display: block;
+	text-align: right;
+	text-decoration: none;
+	color: #999;
+	font-size: 0.9rem;
+	transition: .3s;
+    margin-right: 15px;
+}
+
+a:hover{
+	color: #0ea1eb;
+}
+

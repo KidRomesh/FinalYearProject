@@ -1,0 +1,22 @@
+.example-sidenav-content {
+    height:auto;
+    width:20%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  .top{
+    height: 30%;
+    width: 100%;
+    border-bottom: 5px;
+}
+
+img {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
