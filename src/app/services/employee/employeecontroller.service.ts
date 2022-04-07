@@ -15,6 +15,7 @@ export class EmployeecontrollerService {
   };
 
 
+<<<<<<< HEAD
 
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
@@ -35,6 +36,10 @@ export class EmployeecontrollerService {
     }
     
     addHero(emp: Employee): Observable<Employee> {
+=======
+    
+    login(emp: Employee): Observable<Employee> {
+>>>>>>> 4587830994f16ce9e28e7b175dac78b0b9400d91
       const url = `${this.empUrl}/login`;
       return this.http.post<Employee>(url, emp, this.httpOptions)
     }
