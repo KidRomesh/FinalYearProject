@@ -10,12 +10,15 @@ import {MatChipsModule} from '@angular/material/chips';
 import {MatCommonModule} from '@angular/material/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-
+import {MatMenuModule} from '@angular/material/menu';
+import {MatStepperModule} from '@angular/material/stepper';
 
 import { SharedRoutingModule } from './shared-routing.module';
 import { SharedComponent } from './shared.component';
 import { NavComponent } from './nav/nav.component';
 import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 
 @NgModule({
@@ -23,6 +26,8 @@ import { LoginComponent } from './login/login.component';
     SharedComponent,
     NavComponent,
     LoginComponent,
+    SignupComponent,
+    PagenotfoundComponent
    
   ],
   imports: [
@@ -36,7 +41,9 @@ import { LoginComponent } from './login/login.component';
     MatChipsModule,
     MatCommonModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatMenuModule,
+    MatStepperModule
   ]
 })
 export class SharedModule { }
