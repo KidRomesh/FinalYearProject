@@ -18,7 +18,6 @@ const routes: Routes = [
           { path: '', redirectTo: 'dashboard' },
           { path: 'dashboard', loadChildren: () => import('../core/dashboard/dashboard.module').then(m => m.DashboardModule) },
           { path: 'dep', loadChildren: () => import('../core/department/department.module').then(m => m.DepartmentModule) },
-
         ]
       },
     ]

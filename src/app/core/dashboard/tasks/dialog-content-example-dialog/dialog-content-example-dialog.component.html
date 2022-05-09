@@ -1,0 +1,18 @@
+<h2 mat-dialog-title>Updates</h2>
+<mat-dialog-content class="mat-typography" >
+        <mat-form-field appearance="outline" style="border-color: blue;">
+          <mat-label>Task Query</mat-label>
+          <input matInput placeholder="Placeholder">
+        </mat-form-field><br>
+        <mat-form-field appearance="outline">
+            <mat-label>Due</mat-label>
+            <input matInput placeholder="Placeholder">
+          </mat-form-field><br>
+          <mat-form-field appearance="outline">
+            <mat-label>Status</mat-label>
+            <input matInput placeholder="Placeholder">
+          </mat-form-field>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="openSnackBar('Successfully Updated')">Submit</button>
+</mat-dialog-actions>

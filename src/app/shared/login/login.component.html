@@ -1,15 +1,14 @@
-<body>
-	<img class="wave" src="../assets/images/wave.png">
-	<div class="container">
-		<div class="img">
-			<img src="../assets/images/bg.svg">
-		</div>
-		<div class="login-content">
-			<form action="">
-				<img src="../assets/images/avatar.svg">
-				<h2 class="title">Welcome</h2>
-           		<div class="input-div">
-           		   <!-- <div class="i">
+<img class="wave" src="../assets/images/wave.png">
+<div class="container">
+	<div class="img">
+		<img src="../assets/images/bg.svg">
+	</div>
+	<div class="login-content">
+		<form [formGroup]="registerForm" (ngSubmit)="login()">
+			<img src="../assets/images/avatar.svg">
+			<h2 class="title">Welcome</h2>
+			<div class="input-div">
+				<!-- <div class="i">
            		   		<i class="fas fa-user"></i>
            		   </div>
            		   <div class="div">
@@ -25,46 +24,27 @@
            		    	<h5>Password</h5>
            		    	<input type="password" class="input">
             	   </div>  -->
-				<div class="inputs" id="int1"> 
+				<div class="inputs" id="int1">
 					<div class="i">
-						<i class="fas fa-user"></i>
+						<i class="fas fa-user" id="useicon"></i>
 					</div>
-					<input type="text" required>
-					<label>Username</label>
+					<input type="text" id="userName" formControlName="userName" required>
+					<label for="userName">Username</label>
 				</div>
 				<div class="inputs" id="int2">
 					<div class="i">
-						<i class="fas fa-lock"></i>
+						<i class="fas fa-lock" id="useicon"></i>
 					</div>
-					<input type="password" required>
+					<input  [type]="show_button ? 'text' : 'password'" id="password" formControlName="password" required>
 					<label>Password</label>
+					<i [class]="show_eye ? 'fa fa-eye' : 'fa fa-eye-slash'" (click)="showPassword()"
+						style="cursor: pointer; margin-left: auto;"></i>
 				</div>
-            	</div>
-            	<a routerLink="Home">Forgot Password?</a>
-            	<input type="submit" class="btn" value="Login">
-				<input type="submit" class="btn" routerLink="../signup" value="Signup">
-				<!-- <input type="submit" class="btn" routerLink="../test" value="Test"> -->
-            </form>
-        </div>
-    </div>
-</body>
-<!-- <script>
-    const inputs = document.querySelectorAll(".input");
-    function addcl(){
-        let parent = this.parentNode.parentNode;
-        parent.classList.add("focus");
-    }
-
-    function remcl(){
-        let parent = this.parentNode.parentNode;
-        if(this.value == ""){
-            parent.classList.remove("focus");
-        }
-    }
-
-
-    inputs.forEach(input => {
-        input.addEventListener("focus", addcl);
-        input.addEventListener("blur", remcl);
-    });
-</script> -->
+			</div>
+			<a>Forgot Password?</a>
+			<input class="btn" value="Login" type="button" (click)="login()">
+			<input type="submit" class="btn" routerLink="../signup" value="Signup">
+			<!-- <input type="submit" class="btn" routerLink="../test" value="Test"> -->
+		</form>
+	</div>
+</div>

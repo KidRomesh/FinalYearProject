@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
-*{
+/* *{
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
@@ -8,8 +8,11 @@
 body{
     font-family: 'Poppins', sans-serif;
     overflow: hidden;
-}
-
+} */
+input::-ms-reveal,
+input::-ms-clear {
+        display: none;
+      }
 .wave{
 	position: fixed;
 	bottom: 0;
@@ -150,14 +153,12 @@ form{
 .input-div.pass{
 	margin-bottom: 4px;
 } */
- i{
+ #useicon{
 	color: #0ea1eb;
 	display: inline;
 	justify-content: center;
 	align-items: center;
 }
-
-
 .input-div .inputs{
 	position: relative;
     display: grid;
@@ -172,7 +173,7 @@ form{
 	position: absolute;
 	left: 20px;
 	top: 0;
-	width: 100%;
+	width: 320px;
 	height: 100%;
 	border: none;
 	outline: none;

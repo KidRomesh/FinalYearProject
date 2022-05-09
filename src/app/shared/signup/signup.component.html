@@ -1,119 +1,125 @@
-<body>
-	<img class="wave" src="../assets/images/wave2.png">
+<img class="wave" src="../assets/images/wave2.png">
     <div class="img">
         <img src="../assets/images/tree.svg">
     </div>
 	<div class="container">
-        <div class="login-content">
-            <mat-stepper>
-                <mat-step label="Personal">
-                  <form action=""  class="form">
-                    <h1 class="form__title">Sign Up</h1>
-                            
-                    <div class="form__div">
-                        <input type="text" class="form__input" placeholder=" " required>
-                        <label for="" class="form__label">First Name</label>
-                    </div>
-                    <div class="form__div">
-                        <input type="text" class="form__input" placeholder=" ">
-                        <label for="" class="form__label">Last Name</label>
-                    </div>
-                    <div class="form__div">
-                        <input type="text" class="form__input" placeholder=" ">
-                        <label for="" class="form__label">User Name</label>
-                    </div>
+        <form [formGroup]="registerForm" (ngSubmit)="submit()">
+            <div class="login-content">
             
-                    <div class="form__div">
-                        <input type="password" class="form__input" placeholder=" ">
-                        <label for="" class="form__label">Password</label>
-                    </div>
-            
-                    <div class="form__div">
-                        <input type="password" class="form__input" placeholder=" ">
-                        <label for="" class="form__label">Confirm Password</label>
-                    </div>
-                      <button mat-button matStepperNext class="form__button">Next</button>
-                  </form>
-                </mat-step>
-                <mat-step  label="Others">
-                  <form action=""  class="form">
-                    <div class="form__div">
-                        <input type="text" class="form__input" placeholder=" " required>
-                        <label for="" class="form__label">Father Name</label>
-                    </div>
-                    <div class="form__div">
-                        <input type="text" class="form__input" placeholder=" ">
-                        <label for="" class="form__label">Mother Name</label>
-                    </div>
-                    <div class="form__div">
-                        <input type="date" class="form__input" placeholder=" ">
-                        <label for="" class="form__label">DOB</label>
-                    </div>
-                    <div class="form__div">
-                        <input type="text" class="form__input" placeholder=" ">
-                        <label for="" class="form__label">Address</label>
-                    </div>
-            
-                    <div class="form__div">
-                        <!-- <input type="text" class="form__input" placeholder=" "> -->
-                        <select name="cars" type="text" style="padding: 5px; margin-left: 5px;" class="form__input" >
-                            <option disabled selected>Blood Group</option>
-                            <option value="">A+</option>
-                            <option value="">A-</option>
-                            <option value="">B+</option>
-                            <option value="">B-</option>
-                            <option value="">AB+</option>
-                            <option value="">AB-</option>
-                            <option value="">O+</option>
-                            <option value="">O-</option>
-                          </select>
-                        <label for="" class="form__label">Blood Group</label>
-                    </div>
-                    
-                    <div style="display: flex; margin-left: 5px;">
-                        <h3 >Education:</h3>
-                        <label for="chkYes" style="margin-top: 7px; margin-left: 10px;">
-                            <input type="radio" id="chkYes" name="chkPassPort" />
-                            UG
-                        </label>
-                        <label for="chkNo" style="margin-top: 7px; margin-left: 10px;">
-                            <input type="radio" id="chkNo" name="chkPassPort" />
-                            PG
-                        </label>
-                    </div>
-                    <div id="dvug" style="display: none">
+                <mat-stepper>
+                    <mat-step label="Personal">
+                      <div  class="form">
+                        <h1 class="form__title">Sign Up</h1>
+                                
                         <div class="form__div">
-                            <input type="text" class="form__input" placeholder=" ">
-                            <label for="" class="form__label">UG</label>
+                            <input matInput type="text" maxlength="14" required formControlName="firstName" class="form__input" placeholder=" " required>
+                            <label for="firstName" class="form__label">First Name</label>
                         </div>
                         <div class="form__div">
-                            <input type="text" class="form__input" placeholder=" ">
-                            <label for="" class="form__label">10th</label>
+                            <input matInput  type="text" maxlength="14" required formControlName="lastName"class="form__input" placeholder=" ">
+                            <label for="lastName" class="form__label">Last Name</label>
                         </div>
                         <div class="form__div">
-                            <input type="text" class="form__input" placeholder=" ">
-                            <label for="" class="form__label">12th</label>
+                            <input type="text" required maxlength="14" formControlName="userName" class="form__input" placeholder=" ">
+                            <label for="userName" class="form__label">User Name</label>
                         </div>
+                
+                        <div class="form__div">
+                            <input type="password" formControlName="password" required minlength="8" maxlength="16" class="form__input" placeholder=" ">
+                            <label for="password" class="form__label">Password</label>
+                        </div>
+                
+                        <div class="form__div">
+                            <input type="password" class="form__input" placeholder=" ">
+                            <label for="" class="form__label">Confirm Password</label>
+                        </div>
+                          <button  matStepperNext class="form__button">Next</button>
                     </div>
-                    <div id="dvpg" style="display: none">
+                    </mat-step>
+                    <mat-step  label="Others">
+                      <div action=""  class="form">
                         <div class="form__div">
-                            <input type="text" class="form__input" placeholder=" ">
-                            <label for="" class="form__label">PG</label>
+                            <input type="text" required  class="form__input" placeholder=" " required>
+                            <label for="" class="form__label">Father Name</label>
                         </div>
                         <div class="form__div">
-                            <input type="text" class="form__input" placeholder=" ">
-                            <label for="" class="form__label">UG</label>
+                            <input type="text" required class="form__input" placeholder=" ">
+                            <label for="" class="form__label">Mother Name</label>
                         </div>
                         <div class="form__div">
-                            <input type="text" class="form__input" placeholder=" ">
-                            <label for="" class="form__label">12th</label>
+                            <input type="date" required formControlName="dob" class="form__input" placeholder=" ">
+                            <label for="dob" class="form__label">DOB</label>
                         </div>
+                        <div class="form__div">
+                            <input type="text" class="form__input" required formControlName="address" placeholder=" ">
+                            <label for="address" class="form__label">Address</label>
+                        </div>
+                
+                        <div class="form__div">
+                            <!-- <input type="text" class="form__input" placeholder=" "> -->
+                            <select name="cars" type="text" style="padding: 5px; margin-left: 5px;" class="form__input" formControlName="bloodgroup" >
+                                <option disabled selected>Blood Group</option>
+                                <option value="">A+</option>
+                                <option value="">A-</option>
+                                <option value="">B+</option>
+                                <option value="">B-</option>
+                                <option value="">AB+</option>
+                                <option value="">AB-</option>
+                                <option value="">O+</option>
+                                <option value="">O-</option>
+                              </select>
+                            <label for="bloodgroup" class="form__label">Blood Group</label>
+                        </div>
+                        
+                        <div style="display: flex; margin-left: 5px;">
+                            <h3 >Education:</h3>
+                            <label for="chkYes" style="margin-top: 7px; margin-left: 10px;">
+                                <input type="radio" id="chkYes" name="chkPassPort" />
+                                UG
+                            </label>
+                            <label for="chkNo" style="margin-top: 7px; margin-left: 10px;">
+                                <input type="radio" id="chkNo" name="chkPassPort" />
+                                PG
+                            </label>
+                        </div>
+                        <div id="dvug" style="display: none">
+                            <div class="form__div">
+                                <input type="text" formControlName="ug" class="form__input" placeholder=" ">
+                                <label for="ug" class="form__label">UG</label>
+                            </div>
+                            <div class="form__div">
+                                <input type="text" class="form__input" formControlName="sslc" placeholder=" ">
+                                <label for="" class="form__label">10th</label>
+                            </div>
+                            <div class="form__div">
+                                <input type="text" class="form__input" formControlName="hsc" placeholder=" ">
+                                <label for="" class="form__label">12th</label>
+                            </div>
+                        </div>
+                        <div id="dvpg" style="display: none">
+                            <div class="form__div">
+                                <input type="text" class="form__input" formControlName="pg" placeholder=" ">
+                                <label for="pg" class="form__label">PG</label>
+                            </div>
+                            <div class="form__div">
+                                <input type="text" class="form__input" formControlName="ug" placeholder=" ">
+                                <label for="ug" class="form__label">UG</label>
+                            </div>
+                            <div class="form__div">
+                                <input type="text" class="form__input" formControlName="hsc" placeholder=" ">
+                                <label for="hsc" class="form__label">12th</label>
+                            </div>
+                        </div>
+                          <button mat-button matStepperPrevious class="form__button1">Back</button>
+                          <button mat-button matStepperNext class="form__button2" type="button" (click)="submit()"
+                          class="btn btn-secondary">Submit</button>
                     </div>
-                      <button mat-button matStepperPrevious class="form__button1">Back</button>
-                      <button mat-button matStepperNext class="form__button2">Submit</button>
-                  </form>
-                </mat-step>
-              </mat-stepper>
-        </div>
+                    </mat-step>
+                  </mat-stepper>
+                </div>
+        </form>
+       
+           
+
+       
     </div>
-</body>

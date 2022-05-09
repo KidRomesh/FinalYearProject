@@ -106,46 +106,17 @@ body{
     transition: .3s;
   }
   .form__button{
-    display: block;
-    margin: auto;
-    padding: .75rem 2rem;
-    outline: none;
-    border: none;
     background-color: #1A73E8;
-    color: #fff;
-    font-size: 1rem;
-    border-radius: .5rem;
-    cursor: pointer;
-    transition: .3s;
+    color: rgb(255, 255, 255);
   }
   .form__button1{
-    /* display: block; */
-    margin-right: 100px;
-    padding: .75rem 2rem;
-    outline: none;
-    border: none;
     background-color: #1A73E8;
-    color: #fff;
-    font-size: 1rem;
-    border-radius: .5rem;
-    cursor: pointer;
-    transition: .3s;
+    color: rgb(255, 255, 255);
+    margin-right: 150px;
   }
   .form__button2{
-    /* display: block; */
-    /* margin-left: 20px; */
-    padding: .75rem 2rem;
-    outline: none;
-    border: none;
     background-color: #1A73E8;
-    color: #fff;
-    font-size: 1rem;
-    border-radius: .5rem;
-    cursor: pointer;
-    transition: .3s;
-  }
-  .form__button:hover{
-    box-shadow: 0 10px 36px rgba(0,0,0,.15);
+    color: rgb(255, 255, 255);
   }
   
   .form__input:focus + .form__label{

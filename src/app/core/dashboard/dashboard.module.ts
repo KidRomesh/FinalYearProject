@@ -6,16 +6,18 @@ import {MatButtonModule} from '@angular/material/button';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
+import { TasksModule } from './tasks/tasks.module';
 
 
 @NgModule({
   declarations: [
-    DashboardComponent
+    DashboardComponent,
   ],
   imports: [
     CommonModule,
     MatButtonModule,
-    DashboardRoutingModule
+    DashboardRoutingModule,
+    TasksModule
   ]
 })
 export class DashboardModule { }
