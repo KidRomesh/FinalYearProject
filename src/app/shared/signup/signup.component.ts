@@ -13,24 +13,26 @@ import { EmployeecontrollerService } from 'src/app/services/employee/employeecon
 })
 export class SignupComponent implements OnInit {
 
+  datasaved: false;
   students: Student[] = [];
-  datasaved = false;
+  
 
   registerForm = new FormGroup({
-    firstName: new FormControl("", [Validators.required]),
-    lastName: new FormControl("", Validators.required),
-    phone: new FormControl("", Validators.minLength(10)),
+    firstName: new FormControl("", [Validators.required, Validators.minLength(8), Validators.maxLength(15)]),
+    lastName: new FormControl("",[Validators.required, Validators.minLength(8), Validators.maxLength(15)]),
+    phone: new FormControl("", Validators.maxLength(10)),
     email: new FormControl("", Validators.email),
-    userName: new FormControl("", Validators.maxLength(20)),
-    password: new FormControl("", [Validators.required, Validators.maxLength(18)]),
+    userName: new FormControl("",  [Validators.minLength(8), Validators.maxLength(15)]),
+    password: new FormControl("", [Validators.required, Validators.minLength(8), Validators.maxLength(15)]),
+    confpass: new FormControl("", Validators.required),
     address: new FormControl("", Validators.required),
     bloodgroup: new FormControl("", Validators.required),
     dob: new FormControl("", Validators.required),
     gender: new FormControl("", Validators.required),
-    ug: new FormControl("", Validators.required),
-    pg: new FormControl("", Validators.required),
-    hsc: new FormControl("", Validators.required),
-    sslc: new FormControl("", Validators.required)
+    ug: new FormControl(""),
+    pg: new FormControl(""),
+    hsc: new FormControl(""),
+    sslc: new FormControl("")
 
 
   });
@@ -157,5 +159,8 @@ export class SignupComponent implements OnInit {
     return this.registerForm.get('sslc')
   }
 
+  get confpass(){
+    return this.registerForm.get('confpass')
+  }
 
 }

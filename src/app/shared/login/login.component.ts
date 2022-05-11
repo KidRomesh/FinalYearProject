@@ -2,7 +2,6 @@ import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import * as $ from 'jquery';
 import { Employee } from 'src/app/models/employee.model';
 import { EmployeecontrollerService } from 'src/app/services/employee/employeecontroller.service';
 
@@ -15,7 +14,7 @@ export class LoginComponent implements OnInit {
 
   employee: Employee[] = [];
   registerForm = new FormGroup({
-    userName: new FormControl("", [Validators.required]),
+    userName: new FormControl("", [Validators.required,]),
     password: new FormControl("", Validators.required),
   });
 
@@ -40,10 +39,9 @@ export class LoginComponent implements OnInit {
     this.stucor.login({
       userName,
       password
-    } as Employee)
+    } )
       .subscribe(emp => {
         this.employee.push(emp);
-
         console.log("login success", emp);
       });
 
