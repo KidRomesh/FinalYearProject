@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
     this.stucor.login({
       userName,
       password
-    } )
+    }as Employee )
       .subscribe(emp => {
         this.employee.push(emp);
         console.log("login success", emp);

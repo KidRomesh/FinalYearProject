@@ -1,0 +1,35 @@
+<div class="container-fluid">
+    <form [formGroup]="form" (ngSubmit)="addDept()"
+        style="background-color: white; margin-top: 10px; border-radius: 10px; padding: 10px;" class=" mat-elevation-z3"
+        [style.margin-bottom]="'2px'">
+        <div class="row" style="margin-top:10px; padding: 0px;">
+            <div class="col-6">
+                <mat-form-field style="width:100%" appearance="outline">
+                    <mat-label for="deptName" style="font-size:medium; ">Department Name</mat-label>
+                    <input required formControlName="deptName" minlength="3" id="deptName" matInput placeholder="CSE">
+                    <mat-error *ngIf="deptName.hasError('required')">Please fill out the field.</mat-error>
+                    <mat-error *ngIf="deptName.hasError('minlength')">Department name should be atleast 3 Characters.</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-6">
+                <mat-form-field style="width:100%" appearance="outline">
+                    <mat-label for="isActive">Status</mat-label>
+                    <mat-select required id="isActive" formControlName="isActive">
+                        <mat-option value="1">Active</mat-option>
+                        <mat-option value="0">Inactive</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="isActive.hasError('required')">Please choose a status</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-2 align-self-center">
+                <button mat-raised-button type="button" (click)="addDept()" style="color: #0ea1eb;">
+                    <mat-icon>done</mat-icon>
+                    Submit
+                </button>
+            </div>
+        </div>
+    </form>
+
+</div>

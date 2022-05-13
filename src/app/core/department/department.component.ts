@@ -1,6 +1,5 @@
-import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
-import { Dept } from 'src/app/models/dept.model.';
-import { DeptcontrollerService } from 'src/app/services/dept/deptcontroller.service';
+import { Component, OnInit} from '@angular/core';
+
 
 
 

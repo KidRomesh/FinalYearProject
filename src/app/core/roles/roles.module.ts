@@ -12,23 +12,21 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms';
 
-
-import { DepartmentRoutingModule } from './department-routing.module';
-import { DepartmentComponent } from './department.component';
-import { DeptComponent } from './dept/dept.component';
-import { CreatedeptComponent } from './createdept/createdept.component';
+import { RolesRoutingModule } from './roles-routing.module';
 import { SharedModule } from 'src/app/shared/shared.module';
-
+import { RolesComponent } from './roles.component';
+import { RolecompComponent } from './rolecomp/rolecomp.component';
+import { CreaterolesComponent } from './createroles/createroles.component';
 
 @NgModule({
   declarations: [
-    DepartmentComponent,
-    DeptComponent,
-    CreatedeptComponent,
+    RolesComponent,
+    RolecompComponent,
+    CreaterolesComponent,
   ],
   imports: [
     CommonModule,
-    DepartmentRoutingModule,
+    RolesRoutingModule,
     SharedModule,
     MatCardModule,
     MatButtonModule,
@@ -40,7 +38,6 @@ import { SharedModule } from 'src/app/shared/shared.module';
     MatInputModule,
     MatSelectModule,
     ReactiveFormsModule,
-    
   ]
 })
-export class DepartmentModule { }
+export class RolesModule { }

@@ -16,13 +16,13 @@ import {MatStepperModule} from '@angular/material/stepper';
 import { MatCardModule } from '@angular/material/card';
 
 import { SharedRoutingModule } from './shared-routing.module';
+
 import { SharedComponent } from './shared.component';
 import { NavComponent } from './nav/nav.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
-import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
-import { MessageComponent } from './message/message.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { KeyValueFilterPipe } from '../pipes/key-value-filter.pipe';
 
 
 
@@ -32,8 +32,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     NavComponent,
     LoginComponent,
     SignupComponent,
-    PagenotfoundComponent,
-    MessageComponent,
+    KeyValueFilterPipe
+
    
   ],
   imports: [
@@ -54,6 +54,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     MatFormFieldModule,
     HttpClientModule
-  ]
+  ],
+  exports: [KeyValueFilterPipe]
 })
 export class SharedModule { }

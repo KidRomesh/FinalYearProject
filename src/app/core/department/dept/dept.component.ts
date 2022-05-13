@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Dept } from 'src/app/models/dept.model.';
+import { Dept } from 'src/app/models/dept.model';
 import { DeptcontrollerService } from 'src/app/services/dept/deptcontroller.service';
+import { ServiceProvider } from 'src/app/services/service.provider';
 
 @Component({
   selector: 'app-dept',
@@ -9,17 +10,23 @@ import { DeptcontrollerService } from 'src/app/services/dept/deptcontroller.serv
 })
 export class DeptComponent implements OnInit {
 
+
   depts:Dept[]=[];
-  constructor(private deptControl: DeptcontrollerService) { }
+  constructor(private deptControl: DeptcontrollerService, private dataservice: ServiceProvider) { }
 
   ngOnInit(): void {
     this.getDept()
     
   }
-  getDept(): void {
-    this.deptControl.getDepts()
-    .subscribe(hero => this.depts = hero);
+  // getDept(): void {
+  //   this.deptControl.getDepts()
+  //   .subscribe(hero => this.depts = hero);
+  // }
+
+  getDept(){
+    this.dataservice.get('getdepts', null).subscribe(dept=>this.depts=dept);
   }
 
 
-}
+
+ }

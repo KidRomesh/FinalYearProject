@@ -5,6 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { RouteReuseStrategy } from '@angular/router';
+import { ServiceProvider } from './services/service.provider';
+import { ServiceConfig } from './services/service.url.config';
 
 
 @NgModule({
@@ -18,7 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [ServiceProvider, ServiceConfig, ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

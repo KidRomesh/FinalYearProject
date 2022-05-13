@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Dept } from 'src/app/models/dept.model.';
+import { Dept } from 'src/app/models/dept.model';
 
 @Injectable({
   providedIn: 'root'
@@ -19,8 +19,12 @@ export class DeptcontrollerService {
   getDepts():Observable<Dept[]>{
     const url = `${this.deptUrl}/depts`
     return this.http.get<Dept[]>(url)
-    
 
+  }
+
+  addDept(dept:Dept):Observable<Dept[]>{
+    const url = `${this.deptUrl}/createdept`
+    return this.http.post<Dept[]>(url,dept, this.httpOptions)
   }
 
   
