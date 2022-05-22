@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Employee } from 'src/app/models/employee.model';
-import { EmployeecontrollerService } from 'src/app/services/employee/employeecontroller.service';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +17,7 @@ export class LoginComponent implements OnInit {
     password: new FormControl("", Validators.required),
   });
 
-  constructor(private stucor: EmployeecontrollerService, private router: Router) { }
+  constructor( private router: Router) { }
 
   ngOnInit(): void {
 
@@ -33,22 +32,9 @@ export class LoginComponent implements OnInit {
     this.show_eye = !this.show_eye;
   }
 
-  add(
-    userName: string,
-    password: string,) {
-    this.stucor.login({
-      userName,
-      password
-    }as Employee )
-      .subscribe(emp => {
-        this.employee.push(emp);
-        console.log("login success", emp);
-      });
 
-  }
   login() {
-    this.add(this.userName?.value, this.password?.value);
-    console.log(this.registerForm.value)
+
     this.router.navigate(['Home'])
   }
 

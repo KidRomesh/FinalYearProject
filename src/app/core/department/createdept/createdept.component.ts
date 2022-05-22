@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Dept } from 'src/app/models/dept.model';
-import { DeptcontrollerService } from 'src/app/services/dept/deptcontroller.service';
 import { ServiceProvider } from 'src/app/services/service.provider';
 
 @Component({
@@ -18,7 +17,7 @@ export class CreatedeptComponent implements OnInit {
 
   depts:Dept[]=[];
 
-  constructor(private deptControl : DeptcontrollerService, private dataservice: ServiceProvider) { }
+  constructor(private dataservice: ServiceProvider) { }
 
   ngOnInit(): void {
   }

@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, MaxLengthValidator } from '@angular/forms';
-import { Router } from '@angular/router';
 import * as $ from 'jquery';
-import { Location } from '@angular/common';
 import { Student } from 'src/app/models/student.model';
-import { EmployeecontrollerService } from 'src/app/services/employee/employeecontroller.service';
 
 @Component({
   selector: 'app-signup',
@@ -39,7 +36,7 @@ export class SignupComponent implements OnInit {
 
 
 
-  constructor( private location: Location, private router: Router, private stucor: EmployeecontrollerService) { }
+  constructor() { }
 
   ngOnInit(): void {
     $(function () {
@@ -58,62 +55,10 @@ export class SignupComponent implements OnInit {
   submit() {
 
     console.log(this.registerForm.value);
-    this.add(
-      this.userName?.value,
-      this.password?.value,
-      this.firstName?.value,
-      this.lastName?.value,
-      this.phone?.value,
-      this.email?.value,
-      this.address?.value,
-      this.bloodgroup?.value,
-      this.dob?.value,
-      this.gender?.value,
-      this.hsc?.value,
-      this.sslc?.value,
-      this.ug?.value,
-      this.pg?.value
-    );
+
     
   }
 
-  add(
-    firstName: string,
-    lastName: string,
-    phone: number,
-    email: string,
-    userName: string,
-    password: string,
-    address: string,
-    bloodgroup: string,
-    dob: string,
-    gender: string,
-    pg: string,
-    ug: string,
-    hsc: string,
-    sslc: string,
-
-  ): void {
-   
-    if (!firstName) { return; }
-    this.stucor.signup({
-      firstName, lastName, userName, password, phone, email,
-      address,
-      bloodgroup,
-      dob,
-      gender,
-      pg,
-      ug,
-      hsc,
-      sslc
-    } as Student)
-    .subscribe(student=> {
-      this.students.push(student);
-      this.location.back();
-      console.log("Iam from register", student);   
-    });
-
-  }
 
 
   get userName() {

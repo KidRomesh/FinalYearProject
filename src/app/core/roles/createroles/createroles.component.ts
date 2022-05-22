@@ -1,7 +1,8 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Roles } from 'src/app/models/role.model';
-import { RolecontrollerService } from 'src/app/services/role/rolecontroller.service';
 import { ServiceProvider } from 'src/app/services/service.provider';
 
 
@@ -22,7 +23,7 @@ export class CreaterolesComponent implements OnInit {
   });
 
 
-  constructor( private dataservice : ServiceProvider) { }
+  constructor( private dataservice : ServiceProvider, private location: Location, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -35,13 +36,16 @@ export class CreaterolesComponent implements OnInit {
     this.dataservice.post('addrole',null,this.form.value).subscribe(role => { 
       this.roles.push({ Designation, isActive, isEligible }); 
       console.log("Role created successfully",role); 
+      this.location.historyGo(0);
     });
 
   }
 
-  addRoles() {
+  addRoles(): void {
     this.add(this.Designation?.value, this.isActive?.value, this.isEligible?.value);
   }
+
+ 
 
   get Designation() {
     return this.form.get('Designation');

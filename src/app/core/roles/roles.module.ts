@@ -10,19 +10,23 @@ import {MatListModule} from '@angular/material/list';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
+import {MatDialogModule} from '@angular/material/dialog';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 import { RolesRoutingModule } from './roles-routing.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { RolesComponent } from './roles.component';
 import { RolecompComponent } from './rolecomp/rolecomp.component';
 import { CreaterolesComponent } from './createroles/createroles.component';
+import { UpdateComponent } from './update/update.component';
 
 @NgModule({
   declarations: [
     RolesComponent,
     RolecompComponent,
     CreaterolesComponent,
+    UpdateComponent,
   ],
   imports: [
     CommonModule,
@@ -38,6 +42,8 @@ import { CreaterolesComponent } from './createroles/createroles.component';
     MatInputModule,
     MatSelectModule,
     ReactiveFormsModule,
+    FormsModule,
+    MatDialogModule
   ]
 })
 export class RolesModule { }
