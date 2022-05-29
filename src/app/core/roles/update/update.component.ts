@@ -35,7 +35,7 @@ export class UpdateComponent implements OnInit {
   save(): void {
     if (this.roles) {
       this.dataservice.put('updaterole' ,null, this.roles)
-        .subscribe(() => this.goBack());
+        .subscribe(() => this.location.historyGo(-1));
         
     }
   }
