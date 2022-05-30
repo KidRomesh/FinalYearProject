@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 
 import { StudentsRoutingModule } from './students-routing.module';
 import { StudentsComponent } from './students.component';
-import { FacultyComponent } from './faculty/faculty.component';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
@@ -24,13 +23,14 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatCommonModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
+import { StudentComponent } from './student/student.component';
 
 
 @NgModule({
   declarations: [
     StudentsComponent,
-    FacultyComponent,
-    CreatestudentComponent
+    CreatestudentComponent,
+    StudentComponent
   ],
   imports: [
     CommonModule,
