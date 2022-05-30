@@ -9,7 +9,8 @@ const routes: Routes = [
       { path: 'tasks', component: TasksComponent },
       { path: 'employees', loadChildren: () => import('../employees/employees.module').then(m => m.EmployeesModule) },
       { path: 'dep', loadChildren: () => import('../department/department.module').then(m => m.DepartmentModule) },
-      { path: 'roles', loadChildren: () => import('../roles/roles.module').then(m => m.RolesModule) }
+      { path: 'roles', loadChildren: () => import('../roles/roles.module').then(m => m.RolesModule) },
+      { path: 'student', loadChildren: () => import('../students/students.module').then(m => m.StudentsModule) },
     ]
   },
   
