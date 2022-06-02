@@ -10,7 +10,8 @@ export class ServiceConfig{
         addrole:{url: ServiceConfig.API_AUTH +'role/createrole', header: true, authorization: false, datatype:'API'},
         getroleid:{url: ServiceConfig.API_AUTH +'role/rolebyid/', header: true, authorization: false, datatype:'API'},
         updaterole:{url: ServiceConfig.API_AUTH +'role/updaterole', header: true, authorization: false, datatype:'API'},
-        
+        deleterole:{url: ServiceConfig.API_AUTH +'role/deleterole/', header: true, authorization: false, datatype:'API'},
+
         
         getdepts:{url: ServiceConfig.API_AUTH +'dept/depts', header: true, authorization: false, datatype:'API'},
         adddept:{url: ServiceConfig.API_AUTH +'dept/createdept', header: true, authorization: false, datatype:'API'}

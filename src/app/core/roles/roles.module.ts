@@ -20,6 +20,7 @@ import { RolesComponent } from './roles.component';
 import { RolecompComponent } from './rolecomp/rolecomp.component';
 import { CreaterolesComponent } from './createroles/createroles.component';
 import { UpdateComponent } from './update/update.component';
+import { DeleteComponent } from './delete/delete.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { UpdateComponent } from './update/update.component';
     RolecompComponent,
     CreaterolesComponent,
     UpdateComponent,
+    DeleteComponent,
   ],
   imports: [
     CommonModule,

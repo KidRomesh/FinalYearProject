@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Roles } from 'src/app/models/role.model';
 import { ServiceProvider } from 'src/app/services/service.provider';
+import { DeleteComponent } from '../delete/delete.component';
 
 @Component({
   selector: 'app-rolecomp',
@@ -11,7 +13,7 @@ export class RolecompComponent implements OnInit {
   
 roles:Roles[]=[]
   
-  constructor( private dataservice: ServiceProvider) { }
+  constructor( private dataservice: ServiceProvider, public dialog:MatDialog) { }
 
   ngOnInit(): void {
     this.getRoles()
@@ -26,6 +28,7 @@ roles:Roles[]=[]
       });
     
   }
+
 
 
 }
