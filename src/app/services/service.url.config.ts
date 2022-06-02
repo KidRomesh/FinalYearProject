@@ -14,6 +14,9 @@ export class ServiceConfig{
 
         
         getdepts:{url: ServiceConfig.API_AUTH +'dept/depts', header: true, authorization: false, datatype:'API'},
-        adddept:{url: ServiceConfig.API_AUTH +'dept/createdept', header: true, authorization: false, datatype:'API'}
+        adddept:{url: ServiceConfig.API_AUTH +'dept/createdept', header: true, authorization: false, datatype:'API'},
+        getdeptid:{url: ServiceConfig.API_AUTH +'dept/deptbyid/', header: true, authorization: false, datatype:'API'},
+        updatedept:{url: ServiceConfig.API_AUTH +'dept/updatedept', header: true, authorization: false, datatype:'API'},
+        deletedept:{url: ServiceConfig.API_AUTH +'dept/deletedept/', header: true, authorization: false, datatype:'API'}
     }
 }

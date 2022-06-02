@@ -11,13 +11,15 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { FormsModule } from '@angular/forms';
 
 import { DepartmentRoutingModule } from './department-routing.module';
 import { DepartmentComponent } from './department.component';
 import { DeptComponent } from './dept/dept.component';
 import { CreatedeptComponent } from './createdept/createdept.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { EditdeptComponent } from './editdept/editdept.component';
+import { DeleteDeptComponent } from './delete-dept/delete-dept.component';
 
 
 @NgModule({
@@ -25,6 +27,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
     DepartmentComponent,
     DeptComponent,
     CreatedeptComponent,
+    EditdeptComponent,
+    DeleteDeptComponent,
   ],
   imports: [
     CommonModule,
@@ -40,6 +44,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
     MatInputModule,
     MatSelectModule,
     ReactiveFormsModule,
+    FormsModule
     
   ]
 })

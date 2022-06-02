@@ -1,0 +1,25 @@
+<!-- <div *ngIf="roles" style="height:100px; width:200px;">
+    <h2>Are You Sure You Want To Delete {{roles.Designation}}</h2>
+    <button mat-raised-button>Delete</button>
+</div> -->
+
+<div class="contianer">
+    <div class="row justify-content-center my-5">
+        <div class="col-lg-6">
+            <mat-card *ngIf="dept">
+                <mat-card-title>
+                    <h2>{{dept.deptName | uppercase}}</h2>
+                </mat-card-title>
+                <mat-card-content>
+                    <p>Are you sure you want to delete the mentioned department?</p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-button (click)="goBack()">Cancel</button>
+                    <button mat-button type="submit" (click)="delete()">
+                        Delete
+                    </button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</div>

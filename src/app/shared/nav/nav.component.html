@@ -1,46 +1,58 @@
 <mat-drawer-container style="height: 100%; width: 100%;">
     <mat-drawer #drawer class="example-sidenav-content  mat-elevation-z3" style="background-color: #0ea1eb;" opened
         mode="side">
-        <div style="margin-top: 150px; text-align: center;">
+        <div style="margin-top: 100px; text-align: center;">
             <img src="..//..//../assets/male_av.png" style="width:100px;">
             <h1>Romesh!</h1><br>
             <button mat-raised-button routerLink="dep" color="primary"
                 style="border-radius: 40px; color:#0ea1eb; background-color: white; width: 200px;">
-                <mat-icon style="position: relative; align-self: flex-start;">settings</mat-icon>
-                <span></span>
+                <span style="margin-right:-30px"></span>
+                <mat-icon style="position: relative; align-self: flex-start;">library_books</mat-icon>
+                <span style="margin-left: 20px;"></span>
                 <mat-label>Departments</mat-label>
                 <!-- <span >Departments</span> -->
             </button><br><br>
-            <button mat-raised-button routerLink="roles" color="primary"
+            <button mat-raised-button routerLink="roles" 
                 style="border-radius: 40px; color:#0ea1eb; background-color: white; width: 200px;">
-                <mat-icon style="position: relative; align-self: flex-start;">settings</mat-icon>
-                <span></span>
-                <mat-label>Roles</mat-label>
+                <span style="margin-right:-95px;margin-left:40px"></span>
+                <mat-icon >verified_user</mat-icon>
+                <span ></span>
+                <mat-label style="margin-left:40px;">Roles</mat-label>
                 <!-- <span >Departments</span> -->
             </button><br><br>
             <button mat-raised-button routerLink="student" color="primary"
                 style="border-radius: 40px; color:#0ea1eb; background-color: white; width: 200px;">
-                <mat-icon>settings</mat-icon>
+                <span style="margin-right: -40px; "></span>
+                <mat-icon>school</mat-icon>
+                <span style="margin-left:26px"></span>
                 Students
             </button><br><br>
             <button mat-raised-button routerLink="employees" color="primary"
                 style="border-radius: 40px; color:#0ea1eb; background-color: white; width: 200px;">
-                <mat-icon>settings</mat-icon>
-                Employees
+                <span style="margin-right:-45px"></span>
+                <mat-icon>local_library</mat-icon>
+                <span style="margin-left:30px"></span>
+                Faculty
             </button><br><br>
             <button mat-raised-button routerLink="" color="primary"
                 style="border-radius: 40px; color:#0ea1eb; background-color: white; width: 200px;">
-                <mat-icon>settings</mat-icon>
+                <span style="margin-left:-10px"></span>
+                <mat-icon>local_activity</mat-icon>
+                <span style="margin-left:60px; margin-right:-50px"></span>
                 Students Corner
             </button><br><br>
             <button mat-raised-button routerLink="" color="primary"
                 style="border-radius: 40px; color:#0ea1eb; background-color: white; width: 200px;">
-                <mat-icon>settings</mat-icon>
+                <span style="margin-left:-30px"></span>
+                <mat-icon>contacts</mat-icon>
+                <span style="margin-left:20px"></span>
                 Contact Us
             </button><br><br>
             <button mat-raised-button routerLink="" color="primary"
                 style="border-radius: 40px; color:#0ea1eb; background-color: white; width: 200px;">
-                <mat-icon>settings</mat-icon>
+                <span style="margin-left:-15px"></span>
+                <mat-icon> clear_all</mat-icon>
+                <span style="margin-left:50px; margin-right:-30px" ></span>
                 Miscellaneous
             </button>
         </div>

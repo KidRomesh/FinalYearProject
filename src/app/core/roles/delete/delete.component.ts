@@ -33,7 +33,7 @@ export class DeleteComponent implements OnInit {
   }
   openSnackBar(message: string) {
     this.snackBar.open(message.toString(), '', {
-      duration: 3000
+      duration: 5000
     });
   }
 
@@ -41,10 +41,13 @@ export class DeleteComponent implements OnInit {
     if (this.roles) {
       const id: string = this.route.snapshot.paramMap.get('id');
       this.dataservice.delete('deleterole', id)
-        .subscribe(() => this.location.historyGo(-1));
-      this.openSnackBar('successfully deleted');
+        .subscribe(() =>{
+          console.log("Successs")
+        } );
+        this.location.historyGo(-1) 
 
     }
+    this.openSnackBar('Sucessfully Deleted')
   }
 
   goBack(): void {

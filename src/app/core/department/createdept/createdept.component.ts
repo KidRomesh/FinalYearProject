@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Dept } from 'src/app/models/dept.model';
@@ -17,7 +18,7 @@ export class CreatedeptComponent implements OnInit {
 
   depts:Dept[]=[];
 
-  constructor(private dataservice: ServiceProvider) { }
+  constructor(private dataservice: ServiceProvider, private location : Location) { }
 
   ngOnInit(): void {
   }
@@ -31,6 +32,7 @@ export class CreatedeptComponent implements OnInit {
         this.depts.push({deptName, isActive});
         console.log("Dept created succesfully", dept);
       });
+      this.location.historyGo(0);
 
   }
 

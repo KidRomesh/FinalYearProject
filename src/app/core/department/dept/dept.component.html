@@ -37,10 +37,10 @@
                     <mat-card-title style="position: relative;top: 15%;">{{u.deptName}}</mat-card-title>
                     <span class="example-spacer"></span>
                     <div style="position: relative; margin-top: -4px;">
-                        <button mat-icon-button style="color:#0ea1eb">
+                        <button routerLink="edit/{{u.id}}" mat-icon-button style="color:#0ea1eb">
                             <mat-icon>create</mat-icon>
                         </button>
-                        <button mat-icon-button style="color:#0ea1eb">
+                        <button routerLink="remove/{{u.id}}" mat-icon-button style="color:#0ea1eb">
                             <mat-icon>delete_sweep</mat-icon>
                         </button>
                     </div>
