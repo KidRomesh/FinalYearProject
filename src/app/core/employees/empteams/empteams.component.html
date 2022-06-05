@@ -8,159 +8,100 @@
 
             </mat-card>
         </div> -->
-<div class="container" style="margin-top: 10px;">
-    <div class="row">
-        <div class="col-6">
-            <mat-card>
-                <mat-card-header>
-                    <div mat-card-avatar
-                        style=" background: url('../../../../assets/angular.png'); background-size: contain; background-repeat: no-repeat;">
-                    </div>
-                    <mat-card-title style="position: relative;top: 15%;">Angular</mat-card-title>
-                    <span class="example-spacer"></span>
-                    <div style="position: relative; margin-top: -4px;">
-                        <button mat-icon-button style="color:#0ea1eb">
-                            <mat-icon>create</mat-icon>
-                        </button>
-                        <button mat-icon-button style="color:#0ea1eb">
-                            <mat-icon>delete_sweep</mat-icon>
-                        </button>
-                    </div>
-                </mat-card-header>
-                <div style="margin-bottom: 20px;"></div>
-                <mat-divider></mat-divider>
-                <mat-card-content>
-                    <mat-list>
-                        <mat-list-item>
-                            <div
-                                style="position: relative; justify-content: center; align-items: center; margin-left: -15px;">
-                                <div mat-card-avatar
-                                    style=" background: url('../../../../assets/female_av.png'); background-size: contain; background-repeat: no-repeat;">
-                                </div>
+<div class="container" style="margin-top: 20px;">
+    <form [formGroup]="registerForm" (ngSubmit)="create()">
+        <div class="row">
+            <div class="col-6">
+                <mat-form-field style="width:100%" appearance="outline">
+                    <mat-label for="firstName" style="font-size:medium; ">First Name</mat-label>
+                    <input required formControlName="firstName" minlength="8" id="firstName" matInput
+                        placeholder="John">
+                    <mat-error *ngIf="firstName.hasError('required')">Please fill out the field.</mat-error>
+                    <mat-error *ngIf="firstName.hasError('minlength')">First name should be atleast 8
+                        Characters.</mat-error>
+                </mat-form-field>
 
-                            </div>
-                            <span style="margin-left:15px"></span>
-                            <div style="font-size: medium; margin-top: 5px;">Caitlin Snow</div>
-
-                        </mat-list-item>
-                    </mat-list>
-                </mat-card-content>
-            </mat-card>
+            </div>
+            <div class="col-6">
+                <mat-form-field style="width:100%" appearance="outline">
+                    <mat-label for="lastName" style="font-size:medium; ">Last Name</mat-label>
+                    <input required formControlName="lastName" minlength="8" id="lastName" matInput placeholder="wick">
+                    <mat-error *ngIf="lastName.hasError('required')">Please fill out the field.</mat-error>
+                    <mat-error *ngIf="lastName.hasError('minlength')">Last name should be atleast 8
+                        Characters.</mat-error>
+                </mat-form-field>
+            </div>
         </div>
-        <div class="col-6">
-            <mat-card>
-                <mat-card-header>
-                    <div mat-card-avatar
-                        style=" background: url('../../../../assets/react.png'); background-size: contain; background-repeat: no-repeat;">
-                    </div>
-                    <mat-card-title style="position: relative;top: 15%;">React</mat-card-title>
-                    <span class="example-spacer"></span>
-                    <div style="position: relative; margin-top: -4px;">
-                        <button mat-icon-button style="color:#0ea1eb">
-                            <mat-icon>create</mat-icon>
-                        </button>
-                        <button mat-icon-button style="color:#0ea1eb">
-                            <mat-icon>delete_sweep</mat-icon>
-                        </button>
-                    </div>
-                </mat-card-header>
-                <div style="margin-bottom: 20px;"></div>
-                <mat-divider></mat-divider>
-                <mat-card-content>
-                    <mat-list>
-                        <mat-list-item>
-                            <div
-                                style="position: relative; justify-content: center; align-items: center; margin-left: -15px;">
-                                <div mat-card-avatar
-                                    style=" background: url('../../../../assets/male_av.png'); background-size: contain; background-repeat: no-repeat;">
-                                </div>
 
-                            </div>
-                            <span style="margin-left:15px"></span>
-                            <div style="font-size: medium; margin-top: 5px;">Barry Allen</div>
+        <div class="row justify-content-center ">
+            <div class="col-6">
+                <mat-form-field style="width:100%" appearance="outline">
+                    <mat-label for="userName" style="font-size:medium; ">User Name</mat-label>
+                    <input required formControlName="userName" minlength="8" id="userName" matInput
+                        placeholder="John117">
+                    <mat-error *ngIf="userName.hasError('required')">Please fill out the field.</mat-error>
+                    <mat-error *ngIf="userName.hasError('minlength')"> User name should be atleast 8
+                        Characters.</mat-error>
+                </mat-form-field>
 
-                        </mat-list-item>
-                    </mat-list>
-                </mat-card-content>
-            </mat-card>
+            </div>
         </div>
-    </div>
-    <div style="margin-bottom: 15px;"></div>
-    <div class="row">
-        <div class="col-6">
-            <mat-card>
-                <mat-card-header>
-                    <div mat-card-avatar
-                        style=" background: url('../../../../assets/node.png'); background-size: contain; background-repeat: no-repeat;">
-                    </div>
-                    <mat-card-title style="position: relative;top: 15%;">Node</mat-card-title>
-                    <span class="example-spacer"></span>
-                    <div style="position: relative; margin-top: -4px;">
-                        <button mat-icon-button style="color:#0ea1eb">
-                            <mat-icon>create</mat-icon>
-                        </button>
-                        <button mat-icon-button style="color:#0ea1eb">
-                            <mat-icon>delete_sweep</mat-icon>
-                        </button>
-                    </div>
-                </mat-card-header>
-                <div style="margin-bottom: 20px;"></div>
-                <mat-divider></mat-divider>
-                <mat-card-content>
-                    <mat-list>
-                        <mat-list-item>
-                            <div
-                                style="position: relative; justify-content: center; align-items: center; margin-left: -15px;">
-                                <div mat-card-avatar
-                                    style=" background: url('../../../../assets/male_av.png'); background-size: contain; background-repeat: no-repeat;">
-                                </div>
-
-                            </div>
-                            <span style="margin-left:15px"></span>
-                            <div style="font-size: medium; margin-top: 5px;">Wally West</div>
-
-                        </mat-list-item>
-                    </mat-list>
-                </mat-card-content>
-            </mat-card>
+        <div class="row">
+            <div class="col-6">
+                <mat-form-field style="width:100%" appearance="outline">
+                    <mat-label for="phone" style="font-size:medium; ">Phone</mat-label>
+                    <input required formControlName="phone" minlength="10" maxlength="10" id="phone" matInput
+                        placeholder="928457xxxx">
+                    <mat-error *ngIf="phone.hasError('required')">Please fill out the field.</mat-error>
+                    <mat-error *ngIf="phone.hasError('minlength')">Phone number should be atleast 10
+                        Numbers.</mat-error>
+                    <mat-error *ngIf="phone.hasError('maxlength')">Phone Number should be atleast 10
+                        Numbers.</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-6">
+                <mat-form-field style="width:100%" appearance="outline">
+                    <mat-label for="email" style="font-size:medium; ">Mail</mat-label>
+                    <input required formControlName="email" type="email"  id="email" matInput
+                        placeholder="abc@xyz.com">
+                    <mat-error *ngIf="email.hasError('required')">Please fill out the field.</mat-error>
+                    <mat-error *ngIf="email.hasError('email')">Please give a valid mail.</mat-error>
+                </mat-form-field>
+            </div>
         </div>
-        <div class="col-6">
-            <mat-card>
-                <mat-card-header>
-                    <div mat-card-avatar
-                        style=" background: url('../../../../assets/mongo.png'); background-size: contain; background-repeat: no-repeat;">
-                    </div>
-                    <mat-card-title style="position: relative;top: 15%;">MongoDB</mat-card-title>
-                    <span class="example-spacer"></span>
-                    <div style="position: relative; margin-top: -4px;">
-                        <button mat-icon-button style="color:#0ea1eb">
-                            <mat-icon>create</mat-icon>
-                        </button>
-                        <button mat-icon-button style="color:#0ea1eb">
-                            <mat-icon>delete_sweep</mat-icon>
-                        </button>
-                    </div>
-                </mat-card-header>
-                <div style="margin-bottom: 20px;"></div>
-                <mat-divider></mat-divider>
-                <mat-card-content>
-                    <mat-list>
-                        <mat-list-item>
-                            <div
-                                style="position: relative; justify-content: center; align-items: center; margin-left: -15px;">
-                                <div mat-card-avatar
-                                    style=" background: url('../../../../assets/female_av.png'); background-size: contain; background-repeat: no-repeat;">
-                                </div>
-
-                            </div>
-                            <span style="margin-left:15px"></span>
-                            <div style="font-size: medium; margin-top: 5px;">Linda Martin</div>
-
-                        </mat-list-item>
-                    </mat-list>
-                </mat-card-content>
-            </mat-card>
+        <div class="row">
+            <div class="col-6">
+                <mat-form-field appearance="outline" style="width:100%">
+                    <mat-label>Department</mat-label>
+                    <mat-select formControlName="dept_id">
+                      <mat-option *ngFor="let u of depts|keyValueFilter" [value]="u.id">
+                        {{u.deptName}}
+                      </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="dept_id.hasError('required')">Please select the field.</mat-error>
+                  </mat-form-field>
+            </div>
+            <div class="col-6">
+                <mat-form-field appearance="outline" style="width:100%">
+                    <mat-label>Roles</mat-label>
+                    <mat-select formControlName="role_id">
+                      <mat-option *ngFor="let u of roles|keyValueFilter" [value]="u.id">
+                        {{u.Designation}}
+                      </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="role_id.hasError('required')">Please select the field.</mat-error>
+                  </mat-form-field>
+            </div>
         </div>
-    </div>
+        <div class="row justify-content-center my-5">
+            <div class="col-2 ">
+                <button  mat-raised-button type="button" (click)="create()" style="color: #0ea1eb;">
+                    <mat-icon>done</mat-icon>
+                    Submit
+                </button>
+            </div>
+        </div>
+
+    </form>
     <div style="margin-bottom: 15px;"></div>
 </div>

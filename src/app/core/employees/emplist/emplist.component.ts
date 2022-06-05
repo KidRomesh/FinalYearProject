@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Employee } from 'src/app/models/employee.model';
+import { ServiceProvider } from 'src/app/services/service.provider';
 
 @Component({
   selector: 'app-emplist',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmplistComponent implements OnInit {
 
-  constructor() { }
+  emps:Employee[]=[];
+
+
+  constructor(private dataservice: ServiceProvider) { }
 
   ngOnInit(): void {
+    this.getEmp();
   }
+
+  getEmp(){
+    this.dataservice.get('getFaculty', null).subscribe(emp=>this.emps=emp);
+  }
+
+
 
 }

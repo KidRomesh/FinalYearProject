@@ -13,7 +13,7 @@ const routes: Routes = [
       { path: '', component: LoginComponent },
       { path: 'signup', component: SignupComponent },
       {
-        path: 'Home', component: NavComponent, children: [
+        path: 'home', component: NavComponent, children: [
           { path: '', redirectTo: 'dashboard' },
           { path: 'dashboard', loadChildren: () => import('../core/dashboard/dashboard.module').then(m => m.DashboardModule) },
          

@@ -16,7 +16,7 @@ export class CreatedeptComponent implements OnInit {
     isActive: new FormControl("", Validators.required),
   });
 
-  depts:Dept[]=[];
+  
 
   constructor(private dataservice: ServiceProvider, private location : Location) { }
 
@@ -24,20 +24,16 @@ export class CreatedeptComponent implements OnInit {
   }
 
 
-  add(
-    deptName: string,
-    isActive: boolean,) {
-    this.dataservice.post('adddept',null, this.form.value)
-      .subscribe(dept => {
-        this.depts.push({deptName, isActive});
-        console.log("Dept created succesfully", dept);
-      });
-      this.location.historyGo(0);
-
+  add() {
+    this.dataservice.post('adddept',null, this.form.value).subscribe(()=>
+      this.location.historyGo(0)
+    )
   }
 
+  
+
   addDept(){
-    this.add(this.deptName?.value, this.isActive?.value);
+    this.add();
     console.log(this.form.value);
   }
 

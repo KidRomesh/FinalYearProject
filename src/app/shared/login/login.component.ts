@@ -1,8 +1,8 @@
-import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Employee } from 'src/app/models/employee.model';
+import { ServiceProvider } from 'src/app/services/service.provider';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
     password: new FormControl("", Validators.required),
   });
 
-  constructor( private router: Router) { }
+  constructor( private router: Router, private dataservice: ServiceProvider) { }
 
   ngOnInit(): void {
 
@@ -34,8 +34,9 @@ export class LoginComponent implements OnInit {
 
 
   login() {
-
-    this.router.navigate(['Home'])
+    this.dataservice.post('login', null, this.registerForm.value).subscribe(()=>
+      this.router.navigate(['home'])
+    )
   }
 
 
