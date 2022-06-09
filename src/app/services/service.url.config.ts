@@ -18,7 +18,7 @@ export class ServiceConfig {
         updatedept: { url: ServiceConfig.API_AUTH + 'dept/updatedept', header: true, authorization: false, datatype: 'API' },
         deletedept: { url: ServiceConfig.API_AUTH + 'dept/deletedept/', header: true, authorization: false, datatype: 'API' },
 
-        getFaculty: { url: ServiceConfig.API_AUTH + 'employee/employees', header: true, authorization: false, datatype: 'API' },
+        getFaculty: { url: ServiceConfig.API_AUTH + 'employee/employees', header: true, authorization: true, datatype: 'API' },
         empbyid: { url: ServiceConfig.API_AUTH + 'employee/empbyid/', header: true, authorization: false, datatype: 'API' },
         addFaculty: { url: ServiceConfig.API_AUTH + 'employee/addemp', header: true, authorization: false, datatype: 'API' },
 

@@ -22,7 +22,7 @@ export class EmpteamsComponent implements OnInit {
     phone : new FormControl ("", [Validators.required, Validators.maxLength(10), Validators.minLength(10)] ),
     email: new FormControl("", Validators.email),
     dept_id: new FormControl("", Validators.required),
-    role_id: new FormControl("", Validators.required)
+    role: new FormControl("", Validators.required)
   })
 
   constructor(private dataservice: ServiceProvider, private location:Location) { }
@@ -76,7 +76,7 @@ export class EmpteamsComponent implements OnInit {
   get dept_id(){
     return this.registerForm.get('dept_id');
   }
-  get role_id(){
-    return this.registerForm.get('role_id')
+  get role(){
+    return this.registerForm.get('role')
   }
 }

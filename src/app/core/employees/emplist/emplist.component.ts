@@ -19,7 +19,7 @@ export class EmplistComponent implements OnInit {
   }
 
   getEmp(){
-    this.dataservice.get('getFaculty', null).subscribe(emp=>this.emps=emp);
+    this.dataservice.get('getFaculty').subscribe(emp=>this.emps=emp);
   }
 
 

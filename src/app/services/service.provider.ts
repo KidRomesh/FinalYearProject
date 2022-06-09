@@ -18,23 +18,30 @@ export class ServiceProvider {
   // Http Headers
   httpOptions: any = {
     headers: new HttpHeaders({
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      
     })
   };
 
   buildPreCall(endPoint: string, queryParams?: any, pathVar?: any){
     this.httpOptions.params = new HttpParams();
     this.serviceTypeList = this.serviceConfig.services;
+
+    var token = localStorage.getItem('token');
+
+    // console.log(localStorage.getItem('token'))
+  
     if (pathVar === undefined || pathVar == null) {
       this.serviceUrl = this.serviceTypeList[endPoint].url;
     } else {
       this.serviceUrl = this.serviceTypeList[endPoint].url + pathVar;
     }
-    if (this.serviceTypeList[endPoint].autherization) {
-      this.httpOptions.headers = this.httpOptions.headers.set('Authorization', 'Bearer ' + localStorage.getItem('accessToken'));
+    if (this.serviceTypeList[endPoint].authorization) {
+      // console.log(this.serviceTypeList[endPoint].authorization);
+      this.httpOptions.headers = this.httpOptions.headers.set('authorization', `Bearer ${token}`);
     } else {
-      this.httpOptions.headers = this.httpOptions.headers.set('Authorization', ' ');
-      this.httpOptions.headers.delete('Authorization', ' ');
+      this.httpOptions.headers = this.httpOptions.headers.set('authorization', ' ');
+      this.httpOptions.headers.delete('authorization', ' ');
     }
     if (queryParams) {
       for (const key of Object.keys(queryParams)) {

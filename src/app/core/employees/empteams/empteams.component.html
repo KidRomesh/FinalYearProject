@@ -84,12 +84,12 @@
             <div class="col-6">
                 <mat-form-field appearance="outline" style="width:100%">
                     <mat-label>Roles</mat-label>
-                    <mat-select formControlName="role_id">
-                      <mat-option *ngFor="let u of roles|keyValueFilter" [value]="u.id">
+                    <mat-select formControlName="role">
+                      <mat-option *ngFor="let u of roles|keyValueFilter" [value]="u.Designation">
                         {{u.Designation}}
                       </mat-option>
                     </mat-select>
-                    <mat-error *ngIf="role_id.hasError('required')">Please select the field.</mat-error>
+                    <mat-error *ngIf="role.hasError('required')">Please select the field.</mat-error>
                   </mat-form-field>
             </div>
         </div>
