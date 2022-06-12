@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
 
   employee: Employee[] = [];
   registerForm = new FormGroup({
-    userName: new FormControl("", [Validators.required,]),
+    userName: new FormControl("", [Validators.required, Validators.minLength(8)]),
     password: new FormControl("", Validators.required),
   });
 
@@ -34,9 +34,8 @@ export class LoginComponent implements OnInit {
 
 
   login() {
-    this.dataservice.post('login', null, this.registerForm.value).subscribe((res)=>{
+    this.dataservice.post('signin', null, this.registerForm.value).subscribe((res)=>{
 
-      console.log(res);
       if(res['token']){
         localStorage.setItem('token', res['token']);
         this.router.navigate(['home']);

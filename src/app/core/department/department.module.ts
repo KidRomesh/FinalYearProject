@@ -11,6 +11,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { FormsModule } from '@angular/forms';
 
 import { DepartmentRoutingModule } from './department-routing.module';
@@ -43,6 +44,7 @@ import { DeleteDeptComponent } from './delete-dept/delete-dept.component';
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
+    MatSnackBarModule,
     ReactiveFormsModule,
     FormsModule
     

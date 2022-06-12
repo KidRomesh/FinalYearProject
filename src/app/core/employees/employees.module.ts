@@ -5,6 +5,8 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 import {MatInputModule} from '@angular/material/input';
@@ -20,15 +22,19 @@ import { EmplistComponent } from './emplist/emplist.component';
 import { EmpteamsComponent } from './empteams/empteams.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { InfoComponent } from './info/info.component';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { RemoveComponent } from './remove/remove.component';
 
 
 
 @NgModule({
+  
   declarations: [
     EmployeesComponent,
     EmplistComponent,
     EmpteamsComponent,
-    InfoComponent
+    InfoComponent,
+    RemoveComponent
   ],
   imports: [
     CommonModule,
@@ -36,6 +42,7 @@ import { InfoComponent } from './info/info.component';
     SharedModule,
     MatCardModule,
     MatButtonModule,
+    MatDatepickerModule,
     MatTabsModule,
     MatDividerModule,
     MatListModule,
@@ -45,7 +52,11 @@ import { InfoComponent } from './info/info.component';
     MatInputModule,
     ReactiveFormsModule,
     MatBottomSheetModule,
+    MatSnackBarModule,
     FormsModule
+  ],
+  providers: [
+    { provide: MAT_DATE_LOCALE, useValue: 'en-GB' }
   ]
 })
 export class EmployeesModule { }

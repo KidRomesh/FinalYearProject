@@ -16,6 +16,11 @@ export class NavComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  logout(){
+    
+    localStorage.removeItem('token');
+    
+  }
  
  go(){
    this.location.back();
