@@ -3,7 +3,7 @@
         mode="side">
         <div style="margin-top: 100px; text-align: center;">
             <img src="..//..//../assets/male_av.png" style="width:100px;">
-            <h1>Romesh!</h1><br>
+            <h1 *ngIf="users">{{users.name}}</h1><br>
             <button mat-raised-button routerLink="dep" color="primary"
                 style="border-radius: 40px; color:#0ea1eb; background-color: white; width: 200px;">
                 <span style="margin-right:-30px"></span>
@@ -12,11 +12,11 @@
                 <mat-label>Departments</mat-label>
                 <!-- <span >Departments</span> -->
             </button><br><br>
-            <button mat-raised-button routerLink="roles" 
+            <button mat-raised-button routerLink="roles"
                 style="border-radius: 40px; color:#0ea1eb; background-color: white; width: 200px;">
                 <span style="margin-right:-95px;margin-left:40px"></span>
-                <mat-icon >verified_user</mat-icon>
-                <span ></span>
+                <mat-icon>verified_user</mat-icon>
+                <span></span>
                 <mat-label style="margin-left:40px;">Roles</mat-label>
                 <!-- <span >Departments</span> -->
             </button><br><br>
@@ -52,7 +52,7 @@
                 style="border-radius: 40px; color:#0ea1eb; background-color: white; width: 200px;">
                 <span style="margin-left:-15px"></span>
                 <mat-icon> clear_all</mat-icon>
-                <span style="margin-left:50px; margin-right:-30px" ></span>
+                <span style="margin-left:50px; margin-right:-30px"></span>
                 Miscellaneous
             </button>
         </div>
@@ -67,9 +67,6 @@
                 </button>
                 <button mat-button (click)="go()">Reise</button>
                 <span class="example-spacer"></span>
-                <button mat-icon-button style="color:#0ea1eb">
-                    <mat-icon>search</mat-icon>
-                </button>
                 <button mat-icon-button [matMenuTriggerFor]="menu" style="color:#0ea1eb">
                     <mat-icon>person</mat-icon>
                 </button>
@@ -86,22 +83,16 @@
                 </div>
                 <span style="margin-right: 10px;"></span>
                 <div style="margin-top: 150px;">
-                    <h1 style="font-size:40px;">Welcome back Romesh!</h1>
+                    <h1 style="font-size:40px;" *ngIf="users">Welcome back {{users.name}}</h1>
                     <button mat-icon-button disabled style="margin-top: 10px; color: darkgrey;">
                         <mat-icon>
                             notifications
                         </mat-icon>
-                        You have 2 new tasks and {{message}} message.
+                        You have {{message}} new tasks.
                     </button>
                 </div>
                 <span class="example-spacer"></span>
                 <div style="margin-top: 100px;">
-                    <button mat-raised-button (click)="!drawer1.toggle()"
-                        style="border-radius: 40px; background-color:#0ea1eb; color: white;">
-                        <mat-icon>sms</mat-icon>
-                        Messages
-                    </button>
-                    <span style="margin-left:5px;"></span>
                     <button mat-raised-button routerLink="tasks" color="primary"
                         style="border-radius: 40px; background-color:#0ea1eb; color: white;">
                         <mat-icon>create</mat-icon>
@@ -112,6 +103,4 @@
         </mat-toolbar>
         <app-shared> </app-shared>
     </mat-drawer-content>
-    <mat-drawer #drawer1 class="example-sidenav-content  mat-elevation-z3" mode="side" position="end">
-    </mat-drawer>
 </mat-drawer-container>

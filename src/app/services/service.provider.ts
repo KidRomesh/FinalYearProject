@@ -28,6 +28,7 @@ export class ServiceProvider {
     this.serviceTypeList = this.serviceConfig.services;
 
     var token = localStorage.getItem('token');
+   
 
     // console.log(localStorage.getItem('token'))
   

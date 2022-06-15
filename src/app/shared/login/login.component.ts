@@ -11,17 +11,16 @@ import { ServiceProvider } from 'src/app/services/service.provider';
 })
 export class LoginComponent implements OnInit {
 
+
   employee: Employee[] = [];
   registerForm = new FormGroup({
     userName: new FormControl("", [Validators.required, Validators.minLength(8)]),
     password: new FormControl("", Validators.required),
   });
 
-  constructor( private router: Router, private dataservice: ServiceProvider) { }
+  constructor(private router: Router, private dataservice: ServiceProvider) { }
 
   ngOnInit(): void {
-
-
   }
 
   show_button: Boolean = false;
@@ -34,12 +33,9 @@ export class LoginComponent implements OnInit {
 
 
   login() {
-    this.dataservice.post('signin', null, this.registerForm.value).subscribe((res)=>{
+    this.dataservice.post('signin', null, this.registerForm.value).subscribe(() => {
+      this.router.navigate(['home']);
 
-      if(res['token']){
-        localStorage.setItem('token', res['token']);
-        this.router.navigate(['home']);
-      }
     });
   }
 
