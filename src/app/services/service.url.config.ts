@@ -7,6 +7,8 @@ export class ServiceConfig {
         signin: { url: ServiceConfig.API_AUTH + 'auth/signin', header: true, authorization: false, datatype: 'API' },
         getgender: { url: ServiceConfig.API_AUTH + 'auth/gender', header: true, authorization: false, datatype: 'API' },
         getbg: { url: ServiceConfig.API_AUTH + 'auth/bg', header: true, authorization: false, datatype: 'API' },
+        getname: { url: ServiceConfig.API_AUTH + 'employee/emplog/', header: true, authorization: true, datatype: 'API' },
+
 
         getroles: { url: ServiceConfig.API_AUTH + 'role/roles', header: true, authorization: true, datatype: 'API' },
         addrole: { url: ServiceConfig.API_AUTH + 'role/createrole', header: true, authorization: true, datatype: 'API' },
@@ -24,11 +26,14 @@ export class ServiceConfig {
                 
 
         getFaculty: { url: ServiceConfig.API_AUTH + 'employee/employees', header: true, authorization: true, datatype: 'API' },
-        getname: { url: ServiceConfig.API_AUTH + 'employee/emplog/', header: true, authorization: true, datatype: 'API' },
         empbyid: { url: ServiceConfig.API_AUTH + 'employee/empbyid/', header: true, authorization: true, datatype: 'API' },
         addFaculty: { url: ServiceConfig.API_AUTH + 'employee/addemp', header: true, authorization: true, datatype: 'API' },
         updateEmp: { url: ServiceConfig.API_AUTH + 'employee/updateemp', header: true, authorization: true, datatype: 'API' },
         deleteEmp: { url: ServiceConfig.API_AUTH + 'employee/deleteemp/', header: true, authorization: true, datatype: 'API' },
+
+
+        addstudent: { url: ServiceConfig.API_AUTH + 'student/addstudent', header: true, authorization: true, datatype: 'API' },
+
 
 
     }

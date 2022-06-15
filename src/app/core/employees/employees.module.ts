@@ -22,7 +22,6 @@ import { EmplistComponent } from './emplist/emplist.component';
 import { EmpteamsComponent } from './empteams/empteams.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { InfoComponent } from './info/info.component';
-import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { RemoveComponent } from './remove/remove.component';
 
 
@@ -55,8 +54,6 @@ import { RemoveComponent } from './remove/remove.component';
     MatSnackBarModule,
     FormsModule
   ],
-  providers: [
-    { provide: MAT_DATE_LOCALE, useValue: 'en-GB' }
-  ]
+
 })
 export class EmployeesModule { }

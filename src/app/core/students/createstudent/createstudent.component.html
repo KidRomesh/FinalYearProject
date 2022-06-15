@@ -1,1 +1,136 @@
-<h1>hai from create</h1>
+<div class="container" style="margin-top: 20px;">
+    <form [formGroup]="registerForm" (ngSubmit)="create()">
+        <div class="row">
+            <div class="col-6">
+                <mat-form-field style="width:100%" appearance="outline">
+                    <mat-label for="firstName" style="font-size:medium; ">First Name</mat-label>
+                    <input required formControlName="firstName" minlength="8" id="firstName" matInput
+                        placeholder="John">
+                    <mat-error *ngIf="firstName.hasError('required')">Please fill out the field.</mat-error>
+                    <mat-error *ngIf="firstName.hasError('minlength')">First name should be atleast 8
+                        Characters.</mat-error>
+                </mat-form-field>
+
+            </div>
+            <div class="col-6">
+                <mat-form-field style="width:100%" appearance="outline">
+                    <mat-label for="lastName" style="font-size:medium; ">Last Name</mat-label>
+                    <input required formControlName="lastName" minlength="8" id="lastName" matInput placeholder="wick">
+                    <mat-error *ngIf="lastName.hasError('required')">Please fill out the field.</mat-error>
+                    <mat-error *ngIf="lastName.hasError('minlength')">Last name should be atleast 8
+                        Characters.</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row justify-content-center ">
+            <div class="col-6">
+                <mat-form-field style="width:100%" appearance="outline">
+                    <mat-label for="userName" style="font-size:medium; ">User Name</mat-label>
+                    <input required formControlName="userName" minlength="8" id="userName" matInput
+                        placeholder="John117">
+                    <mat-error *ngIf="userName.hasError('required')">Please fill out the field.</mat-error>
+                    <mat-error *ngIf="userName.hasError('minlength')"> User name should be atleast 8
+                        Characters.</mat-error>
+                </mat-form-field>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <mat-form-field style="width:100%" appearance="outline">
+                    <mat-label for="phone" style="font-size:medium; ">Phone</mat-label>
+                    <input required formControlName="phone" minlength="10" maxlength="10" id="phone" matInput
+                        placeholder="928457xxxx">
+                    <mat-error *ngIf="phone.hasError('required')">Please fill out the field.</mat-error>
+                    <mat-error *ngIf="phone.hasError('minlength')">Phone number should be atleast 10
+                        Numbers.</mat-error>
+                    <mat-error *ngIf="phone.hasError('maxlength')">Phone Number should be atleast 10
+                        Numbers.</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-6">
+                <mat-form-field style="width:100%" appearance="outline">
+                    <mat-label for="email" style="font-size:medium; ">Mail</mat-label>
+                    <input required formControlName="email" type="email" id="email" matInput placeholder="abc@xyz.com">
+                    <mat-error *ngIf="email.hasError('required')">Please fill out the field.</mat-error>
+                    <mat-error *ngIf="email.hasError('email')">Please give a valid mail.</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <mat-form-field appearance="outline" style="width:100%">
+                    <mat-label>Department</mat-label>
+                    <mat-select formControlName="dept">
+                        <mat-option *ngFor="let u of depts|keyValueFilter" [value]="u.deptName">
+                            {{u.deptName}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="dept.hasError('required')">Please select the field.</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-6">
+                <mat-form-field style="width:100%" appearance="outline">
+                    <mat-label>Role</mat-label>
+                    <input matInput type="text" id="role" disabled value="STUDENT">
+                  </mat-form-field>
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <mat-form-field appearance="outline" style="width:100%">
+                    <mat-label>Gender</mat-label>
+                    <mat-select formControlName="gender">
+                        <mat-option *ngFor="let u of genders" [value]="u.gender">
+                            {{u.gender}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="gender.hasError('required')">Please select the field.</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-6">
+                <mat-form-field appearance="outline" style="width:100%">
+                    <mat-label>BloodGroup</mat-label>
+                    <mat-select formControlName="bloodgroup">
+                        <mat-option *ngFor="let u of bgs" [value]="u.bg">
+                            {{u.bg}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="bloodgroup.hasError('required')">Please select the field.</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <mat-form-field appearance="outline" style="width:100%">
+                    <mat-label>Date of birth</mat-label>
+                    <input matInput type="date" required formControlName="dob">
+                    <mat-error *ngIf="dob.hasError('required')">Please select the field.</mat-error>
+                </mat-form-field>
+            </div>
+            
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <mat-form-field style="width:100%" appearance="outline">
+                    <mat-label>Your Contact Address Here</mat-label>
+                    <textarea matInput required formControlName="address" placeholder="123, xyz st, abc avenue, y2k-123456"></textarea>
+                    <mat-error *ngIf="address.hasError('required')">Please select the field.</mat-error>
+                  </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row justify-content-center my-5">
+            <div class="col-2 ">
+                <button mat-raised-button type="button" (click)="create()" style="color: #0ea1eb;">
+                    <mat-icon>done</mat-icon>
+                    Submit
+                </button>
+            </div>
+        </div>
+
+    </form>
+    <div style="margin-bottom: 15px;"></div>
+</div>

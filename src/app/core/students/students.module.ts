@@ -4,26 +4,25 @@ import { CommonModule } from '@angular/common';
 import { StudentsRoutingModule } from './students-routing.module';
 import { StudentsComponent } from './students.component';
 
-import { MatCardModule } from '@angular/material/card';
-import { MatButtonModule } from '@angular/material/button';
-import { MatTabsModule } from '@angular/material/tabs';
-import { MatDividerModule } from '@angular/material/divider';
-import { MatListModule } from '@angular/material/list';
-import { MatIconModule } from '@angular/material/icon';
-import { CreatestudentComponent } from './createstudent/createstudent.component';
-import { MatStepperModule } from '@angular/material/stepper';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { HttpClientModule } from '@angular/common/http';
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatListModule} from '@angular/material/list';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MatMenuModule } from '@angular/material/menu';
-import { SharedRoutingModule } from 'src/app/shared/shared-routing.module';
-import { MatGridListModule } from '@angular/material/grid-list';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatChipsModule } from '@angular/material/chips';
-import { MatCommonModule } from '@angular/material/core';
-import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms'
+
+import { CreatestudentComponent } from './createstudent/createstudent.component';
 import { StudentComponent } from './student/student.component';
+import { SharedModule } from 'src/app/shared/shared.module';
+
+
+
 
 
 @NgModule({
@@ -41,19 +40,14 @@ import { StudentComponent } from './student/student.component';
     MatDividerModule,
     MatListModule,
     MatIconModule,
-    MatStepperModule,
     MatFormFieldModule,
     CommonModule,
-    SharedRoutingModule,
-    MatGridListModule,
-    MatSidenavModule,
-    MatToolbarModule,
-    MatChipsModule,
-    MatCommonModule,
+    FormsModule,
     MatInputModule,
-    MatMenuModule,
     ReactiveFormsModule,
-    HttpClientModule
+    SharedModule,
+    MatSelectModule,
+    MatSnackBarModule
   ]
 })
 export class StudentsModule { }

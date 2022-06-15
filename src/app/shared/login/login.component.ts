@@ -33,9 +33,11 @@ export class LoginComponent implements OnInit {
 
 
   login() {
-    this.dataservice.post('signin', null, this.registerForm.value).subscribe(() => {
-      this.router.navigate(['home']);
-
+    this.dataservice.post('signin', null, this.registerForm.value).subscribe((res) => {
+      if (res['token']) {
+        localStorage.setItem('token', res['token']);
+        this.router.navigate(['home']);
+      }
     });
   }
 
