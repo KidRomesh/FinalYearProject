@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
 import {MatButtonModule} from '@angular/material/button';
-import {MatGridListModule} from '@angular/material/grid-list';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import{MatToolbarModule}from '@angular/material/toolbar'
 import {MatIconModule} from '@angular/material/icon';
@@ -40,7 +39,6 @@ import { KeyValueFilterPipe } from '../pipes/key-value-filter.pipe';
     CommonModule,
     SharedRoutingModule,
     MatButtonModule,
-    MatGridListModule,
     MatSidenavModule,
     MatToolbarModule,
     MatIconModule,

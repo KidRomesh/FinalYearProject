@@ -7,7 +7,7 @@ export class ServiceConfig {
         signin: { url: ServiceConfig.API_AUTH + 'auth/signin', header: true, authorization: false, datatype: 'API' },
         getgender: { url: ServiceConfig.API_AUTH + 'auth/gender', header: true, authorization: false, datatype: 'API' },
         getbg: { url: ServiceConfig.API_AUTH + 'auth/bg', header: true, authorization: false, datatype: 'API' },
-        getname: { url: ServiceConfig.API_AUTH + 'employee/emplog/', header: true, authorization: true, datatype: 'API' },
+        getname: { url: ServiceConfig.API_AUTH + 'auth/name', header: true, authorization: true, datatype: 'API' },
 
 
         getroles: { url: ServiceConfig.API_AUTH + 'role/roles', header: true, authorization: true, datatype: 'API' },

@@ -15,7 +15,6 @@ export class NavComponent implements OnInit {
 
   users:User;
   message: number= 3;
-  token: string = localStorage.getItem('token')
 
   constructor(private dataservice:ServiceProvider, private location: Location) { }
 
@@ -24,7 +23,7 @@ export class NavComponent implements OnInit {
   }
 
   getlog(){
-    this.dataservice.get('getname', null, this.token).subscribe(
+    this.dataservice.get('getname').subscribe(
       
       user => {
         this.users = user;
