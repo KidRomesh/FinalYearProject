@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Student } from 'src/app/models/student.model';
+import { ServiceProvider } from 'src/app/services/service.provider';
 
 @Component({
   selector: 'app-student',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentComponent implements OnInit {
 
-  constructor() { }
+  students : Student[]=[];
+
+  constructor(private dataservice :ServiceProvider) { }
 
   ngOnInit(): void {
+    this.getstudents();
+  }
+
+  getstudents(){
+    this.dataservice.get('getstudents', null).subscribe(
+      student =>this.students=student)
   }
 
 }

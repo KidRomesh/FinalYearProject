@@ -5,11 +5,8 @@ export interface Student {
     phone: number;
     email: string;
     userName: string;
-    address: string;
-    bloodgroup: string;
-    dob: string;
-    gender: string;
-
-
+    role: string;
+    dept: string;
+    rollno: number;
 
 }

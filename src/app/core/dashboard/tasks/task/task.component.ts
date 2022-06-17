@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogContentExampleDialogComponent } from '../dialog-content-example-dialog/dialog-content-example-dialog.component';
+import { CreatemodalComponent } from '../createmodal/createmodal.component';
 @Component({
   selector: 'app-task',
   templateUrl: './task.component.html',
@@ -13,6 +13,6 @@ export class TaskComponent implements OnInit {
   ngOnInit(): void {
   }
   openDialog() {
-    this.dialog.open(DialogContentExampleDialogComponent);
+    this.dialog.open(CreatemodalComponent);
   }
 }

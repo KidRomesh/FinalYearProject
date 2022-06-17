@@ -8,6 +8,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
@@ -20,6 +21,9 @@ import { FormsModule } from '@angular/forms'
 import { CreatestudentComponent } from './createstudent/createstudent.component';
 import { StudentComponent } from './student/student.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { SearchComponent } from './search/search.component';
+import { RmcComponent } from './rmc/rmc.component';
+import { FilterComponent } from './filter/filter.component';
 
 
 
@@ -29,7 +33,10 @@ import { SharedModule } from 'src/app/shared/shared.module';
   declarations: [
     StudentsComponent,
     CreatestudentComponent,
-    StudentComponent
+    StudentComponent,
+    SearchComponent,
+    RmcComponent,
+    FilterComponent
   ],
   imports: [
     CommonModule,
@@ -38,6 +45,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
     MatButtonModule,
     MatTabsModule,
     MatDividerModule,
+    MatAutocompleteModule,
     MatListModule,
     MatIconModule,
     MatFormFieldModule,

@@ -110,6 +110,15 @@
                     <mat-error *ngIf="dob.hasError('required')">Please select the field.</mat-error>
                 </mat-form-field>
             </div>
+            <div class="col-6">
+                <mat-form-field appearance="outline" style="width:100%">
+                    <mat-label for="rollno" style="font-size:medium; ">Roll number</mat-label>
+                    <input matInput id="rollno" required maxlength="12" minlength="12" formControlName="rollno">
+                    <mat-error *ngIf="rollno.hasError('required')">Please select the field.</mat-error>
+                    <mat-error *ngIf="rollno.hasError('maxlength')">Roll number should be of 12 Characters </mat-error>
+                    <mat-error *ngIf="rollno.hasError('minlength')">Phone Number should be atleast 12 Numbers.</mat-error>
+                </mat-form-field>
+            </div>
             
         </div>
         <div class="row">

@@ -23,7 +23,7 @@ export class ServiceConfig {
         updatedept: { url: ServiceConfig.API_AUTH + 'dept/updatedept', header: true, authorization: true, datatype: 'API' },
         deletedept: { url: ServiceConfig.API_AUTH + 'dept/deletedept/', header: true, authorization: true, datatype: 'API' },
 
-                
+
 
         getFaculty: { url: ServiceConfig.API_AUTH + 'employee/employees', header: true, authorization: true, datatype: 'API' },
         empbyid: { url: ServiceConfig.API_AUTH + 'employee/empbyid/', header: true, authorization: true, datatype: 'API' },
@@ -33,6 +33,15 @@ export class ServiceConfig {
 
 
         addstudent: { url: ServiceConfig.API_AUTH + 'student/addstudent', header: true, authorization: true, datatype: 'API' },
+        getstudents: { url: ServiceConfig.API_AUTH + 'student/students', header: true, authorization: true, datatype: 'API' },
+        stubyid: { url: ServiceConfig.API_AUTH + 'student/studentid/', header: true, authorization: true, datatype: 'API' },
+        getbydept: { url: ServiceConfig.API_AUTH + 'student/studentdept/', header: true, authorization: true, datatype: 'API' },
+        updateStu: { url: ServiceConfig.API_AUTH + 'student/updatestudent', header: true, authorization: true, datatype: 'API' },
+        deleteStu: { url: ServiceConfig.API_AUTH + 'student/deletestudent/', header: true, authorization: true, datatype: 'API' },
+
+
+
+
 
 
 
