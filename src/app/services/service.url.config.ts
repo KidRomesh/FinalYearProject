@@ -40,6 +40,11 @@ export class ServiceConfig {
         deleteStu: { url: ServiceConfig.API_AUTH + 'student/deletestudent/', header: true, authorization: true, datatype: 'API' },
 
 
+        addtask: { url: ServiceConfig.API_AUTH + 'task/createtask', header: true, authorization: true, datatype: 'API' },
+        gettasks: { url: ServiceConfig.API_AUTH + 'task/gettasks', header: true, authorization: true, datatype: 'API' },
+        getcount: { url: ServiceConfig.API_AUTH + 'task/getcount/', header: true, authorization: true, datatype: 'API' },
+
+
 
 
 

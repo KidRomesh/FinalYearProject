@@ -1,56 +1,72 @@
 <h2 mat-dialog-title>Create task</h2>
 <mat-dialog-content class="matSize">
-  <div class="container-fluid">
-    <div class="row justify-content-center" *ngIf="users">
-        <div class="col-6 align-self-center">
-            <mat-form-field appearance="outline" style="width: 100%;">
-                <mat-label style="font-size: medium;">From:</mat-label>
-                <input matInput type="text" disabled [(ngModel)]="users.name">
-            </mat-form-field>
+    <form [formGroup]="form" (ngSubmit)="addTask()">
+        <div class="container-fluid">
+            <div class="row justify-content-center" *ngIf="users">
+                <div class="col-6 align-self-center">
+                    <mat-form-field appearance="outline" style="width: 100%;">
+                        <mat-label style="font-size: medium;">From:</mat-label>
+                        <input matInput formControlName="from" type="text" [(ngModel)]="users.name">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-6 align-self-center">
+                    <mat-form-field appearance="outline" style="width: 100%;">
+                        <mat-label for="assignto" style="font-size: medium;">Assign To:</mat-label>
+                        <input required formControlName="assignto" minlength="10" id ="assignto" matInput type="text">
+                        <mat-error *ngIf="assignto.hasError('required')">Please fill out the field.</mat-error>
+                        <mat-error *ngIf="assignto.hasError('minlength')">candidate name should be atleast 3 Characters.</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-6 align-self-center">
+                    <mat-form-field appearance="outline" style="width: 100%;">
+                        <mat-label for="task" style="font-size: medium;">Task</mat-label>
+                        <input required formControlName="task" minlength="10" id ="task" matInput type="text">
+                        <mat-error *ngIf="task.hasError('required')">Please fill out the field.</mat-error>
+                        <mat-error *ngIf="task.hasError('minlength')">candidate name should be atleast 3 Characters.</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-6 align-self-center">
+                    <mat-form-field appearance="outline" style="width: 100%;">
+                        <mat-label style="font-size: medium;">Comments</mat-label>
+                        <textarea formControlName="comments" matInput type="text"></textarea>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-6 align-self-center">
+                    <mat-form-field appearance="outline" style="width: 100%;">
+                        <mat-label style="font-size: medium;">Due date</mat-label>
+                        <input  formControlName="due" matInput type="date">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-6 align-self-center">
+                    <mat-form-field style="width:100%" appearance="outline">
+                        <mat-label for="status">Status</mat-label>
+                        <mat-select required formControlName="status" id="status">
+                            <mat-option value="initiated">Initiated</mat-option>
+                            <mat-option value="In Progress">In Progress</mat-option>
+                            <mat-option value="Completed">Completed</mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="status.hasError('required')">Please choose a status</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="row justify-content-center">
-        <div class="col-6 align-self-center">
-            <mat-form-field appearance="outline" style="width: 100%;">
-                <mat-label style="font-size: medium;">Assign To:</mat-label>
-                <input matInput type="text" required>
-            </mat-form-field>
-        </div>
-    </div>
-    <div class="row justify-content-center">
-        <div class="col-6 align-self-center">
-            <mat-form-field appearance="outline" style="width: 100%;">
-                <mat-label style="font-size: medium;">Task</mat-label>
-                <input matInput type="text" required>
-            </mat-form-field>
-        </div>
-    </div>
-    <div class="row justify-content-center">
-        <div class="col-6 align-self-center">
-            <mat-form-field appearance="outline" style="width: 100%;">
-                <mat-label style="font-size: medium;">Comments</mat-label>
-                <textarea matInput type="text" ></textarea>
-            </mat-form-field>
-        </div>
-    </div>
-    <div class="row justify-content-center">
-        <div class="col-6 align-self-center">
-            <mat-form-field style="width:100%" appearance="outline">
-                <mat-label for="status">Status</mat-label>
-                <mat-select required id="status" >
-                    <mat-option value="initiated">Initiated</mat-option>
-                    <mat-option value="In Progress">In Progress</mat-option>
-                    <mat-option value="Completed">Completed</mat-option>
-                </mat-select>
-            </mat-form-field>
-        </div>
-    </div>
-  </div>
+    </form>
+
 </mat-dialog-content>
-<mat-dialog-actions >
-  <button mat-button mat-dialog-close style="color:#0ea1eb; background-color: white; ">Cancel</button>
-  <button mat-icon-button [mat-dialog-close]="true" style=" color:#0ea1eb;">
-    <mat-icon>create</mat-icon>
-    Create
-  </button>
+<mat-dialog-actions>
+    <button mat-button mat-dialog-close style="color:#0ea1eb; background-color: white; ">Cancel</button>
+    <button mat-icon-button [mat-dialog-close]="true" (click)="addTask()" style=" color:#0ea1eb;">
+        <mat-icon>create</mat-icon>
+        Create
+    </button>
 </mat-dialog-actions>

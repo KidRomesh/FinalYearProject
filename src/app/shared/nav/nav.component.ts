@@ -1,6 +1,7 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Count } from 'src/app/models/count.model';
 import { User } from 'src/app/models/user.model';
 import { ServiceProvider } from 'src/app/services/service.provider';
 
@@ -14,12 +15,15 @@ import { ServiceProvider } from 'src/app/services/service.provider';
 export class NavComponent implements OnInit {
 
   users:User;
-  message: number= 3;
+  messages:Count;
+
+  assign = this.getcount();
 
   constructor(private dataservice:ServiceProvider, private location: Location) { }
 
   ngOnInit(): void {
     this.getlog();
+    this.getcount();
   }
 
   getlog(){
@@ -27,9 +31,20 @@ export class NavComponent implements OnInit {
       
       user => {
         this.users = user;
-        console.log("Iam from frontend", this.users);
-      });    
+        
+        
+      });   
+      return this.users.name 
 
+  }
+
+  getcount(){
+    var assignto = this.assign
+    
+    this.dataservice.get('getcount',null ,assignto ).subscribe(
+      message => this.messages= message
+    )
+    
   }
 
 

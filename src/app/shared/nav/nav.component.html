@@ -34,21 +34,21 @@
                 <span style="margin-left:30px"></span>
                 Faculty
             </button><br><br>
-            <button mat-raised-button routerLink="" color="primary"
+            <button mat-raised-button color="primary"
                 style="border-radius: 40px; color:#0ea1eb; background-color: white; width: 200px;">
                 <span style="margin-left:-10px"></span>
                 <mat-icon>local_activity</mat-icon>
                 <span style="margin-left:60px; margin-right:-50px"></span>
                 Students Corner
             </button><br><br>
-            <button mat-raised-button routerLink="" color="primary"
+            <button mat-raised-button  color="primary"
                 style="border-radius: 40px; color:#0ea1eb; background-color: white; width: 200px;">
                 <span style="margin-left:-30px"></span>
                 <mat-icon>contacts</mat-icon>
                 <span style="margin-left:20px"></span>
                 Contact Us
             </button><br><br>
-            <button mat-raised-button routerLink="" color="primary"
+            <button mat-raised-button  color="primary"
                 style="border-radius: 40px; color:#0ea1eb; background-color: white; width: 200px;">
                 <span style="margin-left:-15px"></span>
                 <mat-icon> clear_all</mat-icon>
@@ -71,7 +71,7 @@
                     <mat-icon>person</mat-icon>
                 </button>
                 <mat-menu #menu="matMenu">
-                    <button mat-menu-item>My Profile</button>
+                    <!-- <button mat-menu-item>My Profile</button> -->
                     <button mat-menu-item routerLink="" (click)="logout()">Sign Out</button>
                 </mat-menu>
             </mat-toolbar-row>
@@ -84,11 +84,11 @@
                 <span style="margin-right: 10px;"></span>
                 <div style="margin-top: 150px;">
                     <h1 style="font-size:40px;" *ngIf="users">Welcome back {{users.name}}</h1>
-                    <button mat-icon-button disabled style="margin-top: 10px; color: darkgrey;">
+                    <button mat-icon-button *ngIf="messages" disabled style="margin-top: 10px; color: darkgrey;">
                         <mat-icon>
                             notifications
                         </mat-icon>
-                        You have {{message}} new tasks.
+                        You have {{messages.pending}} tasks.
                     </button>
                 </div>
                 <span class="example-spacer"></span>
